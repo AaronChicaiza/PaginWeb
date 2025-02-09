@@ -1,0 +1,80 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento - Romex</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const historial = [
+            { numero: '12345', estado: 'En tránsito', destino: 'Guayaquil', fecha: '2025-02-05', detalles: 'El envío está en camino y llegará el 10 de febrero.' },
+            { numero: '67890', estado: 'Entregado', destino: 'Quito', fecha: '2025-02-02', detalles: 'El paquete fue entregado a la dirección indicada.' },
+            { numero: '54321', estado: 'En aduana', destino: 'Cuenca', fecha: '2025-02-06', detalles: 'El paquete está siendo revisado por la aduana.' }
+        ];
+
+        const numerosSeguimiento = historial.map(item => item.numero);
+
+        function buscarSeguimiento() {
+            const numero = document.getElementById("seguimiento").value;
+            const resultado = historial.find(item => item.numero === numero);
+
+            if (resultado) {
+                document.getElementById("resultadoBusqueda").innerHTML = `
+                    <h3>Resultado de Búsqueda:</h3>
+                    <table>
+                        <tr><td><strong>Número de seguimiento:</strong></td><td>${resultado.numero}</td></tr>
+                        <tr><td><strong>Estado:</strong></td><td>${resultado.estado}</td></tr>
+                        <tr><td><strong>Destino:</strong></td><td>${resultado.destino}</td></tr>
+                        <tr><td><strong>Fecha:</strong></td><td>${resultado.fecha}</td></tr>
+                        <tr><td><strong>Detalles:</strong></td><td>${resultado.detalles}</td></tr>
+                    </table>
+                    <button onclick="regresar()">Volver a la búsqueda</button>
+                `;
+            } else {
+                document.getElementById("resultadoBusqueda").innerHTML = `
+                    <h3>Resultado de Búsqueda:</h3>
+                    <p>No se encontró ningún pedido con el número de seguimiento ingresado.</p>
+                    <button onclick="regresar()">Volver a la búsqueda</button>
+                `;
+            }
+        }
+
+        function regresar() {
+            document.getElementById("resultadoBusqueda").innerHTML = "";
+            document.getElementById("seguimiento").value = "";
+        }
+
+        function mostrarCodigosDisponibles() {
+            const lista = document.getElementById("listaCodigos");
+            lista.innerHTML = numerosSeguimiento.map(num => `<li>${num}</li>`).join('');
+        }
+
+        window.onload = mostrarCodigosDisponibles;
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de Romex">
+        <h1>Romex Importaciones</h1>
+        <h1>Seguimiento de Envíos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="aliados.html">Aliados Comerciales</a></li>
+                <li><a href="casos_exito.html">Casos de Éxito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Ingrese su número de seguimiento</h2>
+        <form onsubmit="event.preventDefault(); buscarSeguimiento();">
+            <input type="text" id="seguimiento" placeholder="Ejemplo: 12345, 67890, 54321" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <h3>Códigos disponibles:</h3>
+        <ul id="listaCodigos"></ul>
+
+        <div id="resultadoBusqueda"></div>
+    </section>
+</body>
+</html>

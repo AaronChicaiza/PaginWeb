@@ -6,41 +6,143 @@
   <title>Romex-Ec - Servicios</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+    /* Estilos generales */
     body {
-      background-color: #f0f0f0; /* Fondo gris */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8; /* Color de fondo más suave */
+        color: #444;
     }
+
+    /* Encabezado */
+    header {
+        background-color: #2a2a2a; /* Color más oscuro para el encabezado */
+        padding: 25px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        border-bottom: 3px solid #ffcc00; /* Línea decorativa abajo */
+    }
+
+    /* Logo en el encabezado */
+    header img {
+        max-width: 120px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    /* Título del encabezado */
+    header h1 {
+        margin: 0;
+        color: #ffcc00;
+        font-size: 40px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    }
+
+    /* Subtítulo en el encabezado */
+    header h2 {
+        font-size: 22px;
+        color: #e6e6e6;
+        margin-top: 10px;
+        font-weight: lighter;
+    }
+
+    /* Menú de navegación */
+    nav ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        background-color: #333;
+        margin: 0;
+        border-top: 2px solid #ffcc00;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 12px 20px;
+        display: inline-block;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffcc00;
+        color: black;
+        transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+    }
+
+    /* Secciones */
+    section {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #ffffff;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el cursor */
+    }
+
+    section h2 {
+        color: #333;
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #666;
+    }
+
     .service-img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
     }
+
     .nav-link {
-      color: black !important; /* Color negro */
+        color: black !important; /* Color negro */
     }
+
     .nav-link:hover {
-      color: #ffd700 !important; /* Dorado */
+        color: #ffd700 !important; /* Dorado */
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gold;">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Romex-Ec</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="pagina1.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="pagina2.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="pagina3.html">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
+  <header>
+    <img src="logo.png" alt="Logo de Romex">
+    <h1>Romex-Ec</h1>
+    <h2>Tu solución de importación</h2>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pagina2.html">Servicios</a></li>
+      <li><a href="pagina3.html">Contacto</a></li>
+    </ul>
   </nav>
 
   <div class="container my-4">
-    <h1 class="text-center text-warning mb-4">Nuestros Servicios</h1>
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
 
     <!-- Sección de Importaciones -->
     <div class="row mb-4">
